@@ -12,42 +12,41 @@ jobs:
         python-version: [ "3.9", "3.10", "3.11", "3.12", "3.13" ]
     steps:
       - uses: actions/checkout@v4
+      - name: Install Poetry
+        run: |
+          pip install poetry
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
           cache: 'poetry'
+      - name: Install Dependancies
+        run: |
+          poetry env use ${{ matrix.python-version }}
       - name: Run black
         run: |
-          pip install poetry
           poetry install --only black
           poetry run black ./ --verbose --check
-      - name: Run mypy
-        run: |
-          pip install poetry
-          poetry install
-          poetry run mypy .
       - name: Run bandit
         run: |
-          pip install poetry
           poetry install --only bandit
           poetry run bandit -c pyproject.toml -r .
       - name: Run isort
         run: |
-          pip install poetry
           poetry install --only isort
           poetry run isort . --check
       - name: Run ruff
         run: |
-          pip install poetry
           poetry install --only ruff
           poetry run ruff check
       - name: Run audit
         run: |
-          pip install poetry
           poetry self add poetry-audit-plugin
           poetry audit
       - name: Run xenon
         run: |
-          pip install poetry
           poetry install --only xenon
           poetry run xenon . -a A -b A -m A
+      - name: Run mypy
+        run: |
+          poetry install
+          poetry run mypy .
