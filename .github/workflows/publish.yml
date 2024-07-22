@@ -1,21 +1,29 @@
-name: esgf-playground-utils-publish
+name: Upload Python Package to PyPI when a Release is Created
 
 on:
-  push:
-    branches:
-      - main
+  release:
+    types: [ created ]
 
 jobs:
-  quality:
+  pypi-publish:
+    name: Publish release to PyPI
     runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/p/esgf-playground-utils
+    permissions:
+      id-token: write
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
-      - name: Publish
+          python-version: "3.12"
+      - name: Install dependencies
         run: |
-          cd esgf-playground-utils
-          pix install poetry
+          pipx install poetry
+      - name: Build package
+        run: |
           poetry build
-          poetry publish -u __token__ -p ${{ secrets.PYPI_TOKEN }}
+      - name: Publish package distributions to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
