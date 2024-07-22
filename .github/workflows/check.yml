@@ -22,7 +22,7 @@ jobs:
           cache: 'poetry'
       - name: Clear coverage
         run: |
-          poetry install --only test
+          poetry install --with test
           poetry run python -m coverage erase
       - name: Run unit tests
         run: |
@@ -74,5 +74,5 @@ jobs:
           poetry run xenon . -a A -b A -m A
       - name: Run mypy
         run: |
-          poetry install
+          poetry install --with mypy
           poetry run mypy .
