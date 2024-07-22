@@ -1,0 +1,60 @@
+name: esgf-playground-utils-check
+
+on:
+  push:
+    paths:
+      - 'esgf-playground-utils/**'
+  pull_request:
+    paths:
+      - 'esgf-playground-utils/**'
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run black
+        run: |
+          cd esgf-playground-utils
+          pip install poetry
+          poetry install --only black
+          poetry run black ./ --verbose --check
+      - name: Run mypy
+        run: |
+          cd esgf-playground-utils
+          pip install poetry
+          poetry install
+          poetry run mypy .
+      - name: Run bandit
+        run: |
+          cd esgf-playground-utils
+          pip install poetry
+          poetry install --only bandit
+          poetry run bandit -c pyproject.toml -r .
+      - name: Run isort
+        run: |
+          cd esgf-playground-utils
+          pip install poetry
+          poetry install --only isort
+          poetry run isort . --check
+      - name: Run ruff
+        run: |
+          cd esgf-playground-utils
+          pip install poetry
+          poetry install --only ruff
+          poetry run ruff check
+      - name: Run audit
+        run: |
+          cd esgf-playground-utils
+          pip install poetry
+          poetry self add poetry-audit-plugin
+          poetry audit
+      - name: Run xenon
+        run: |
+          cd esgf-playground-utils
+          pip install poetry
+          poetry install --only xenon
+          poetry run xenon . -a A -b A -m A

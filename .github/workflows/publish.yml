@@ -1,0 +1,21 @@
+name: esgf-playground-utils-publish
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Publish
+        run: |
+          cd esgf-playground-utils
+          pip install poetry
+          poetry build
+          poetry publish -u __token__ -p ${{ secrets.PYPI_TOKEN }}
