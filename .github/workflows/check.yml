@@ -24,12 +24,10 @@ jobs:
         run: |
           poetry install --with test
           poetry run python -m coverage erase
-      - name: Run unit tests
+      - name: Run tests
         run: |
-          poetry run python -m coverage run -m unittest discover -s test/unit_test
-      - name: Run functional tests
-        run: |
-          poetry run python -m coverage run -a -m unittest discover -s test/functional_test
+          poetry run python -m coverage erase
+          poetry run python -m coverage run -m unittest discover
       - name: Check coverage
         run: |
           poetry run python -m coverage report
