@@ -1,0 +1,62 @@
+[tool.poetry]
+name = "esgf-playground-utils"
+version = "0.3.0-alpha"
+description = "Common library and models for the ESGF-Playground"
+authors = ["David Poulter <david.poulter@stfc.ac.uk>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.9"
+pydantic-settings = "^2.3.4"
+stac-pydantic = "^3.1.1"
+
+[tool.poetry.group.black.dependencies]
+black = "^24.4.2"
+pre-commit = "^3.7.1"
+
+[tool.poetry.group.mypy.dependencies]
+mypy = "^1.10.1"
+pre-commit = "^3.7.1"
+
+[tool.poetry.group.bandit.dependencies]
+bandit = "^1.7.9"
+pre-commit = "^3.7.1"
+
+[tool.poetry.group.ruff.dependencies]
+ruff = "^0.5.2"
+pre-commit = "^3.7.1"
+
+[tool.poetry.group.isort.dependencies]
+isort = "^5.13.2"
+pre-commit = "^3.7.1"
+
+[tool.poetry.group.xenon.dependencies]
+xenon = "^0.9.1"
+pre-commit = "^3.7.1"
+
+[tool.mypy]
+plugins = [
+    "pydantic.mypy"
+]
+strict = true
+ignore_missing_imports = true
+python_version = "3.9"
+
+[tool.isort]
+profile = "black"
+
+[tool.black]
+target-version = ["py39", "py310", "py311", "py312", "py313"]
+
+[tool.ruff]
+line-length = 88
+indent-width = 4
+target-version = "py39"
+
+[tool.ruff.format]
+docstring-code-format = true
+indent-style = "space"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
