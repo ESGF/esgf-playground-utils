@@ -16,6 +16,6 @@ jobs:
       - name: Publish
         run: |
           cd esgf-playground-utils
-          pip install poetry
+          pix install poetry
           poetry build
           poetry publish -u __token__ -p ${{ secrets.PYPI_TOKEN }}

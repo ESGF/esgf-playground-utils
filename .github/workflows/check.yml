@@ -5,12 +5,33 @@ on:
   - pull_request
 
 jobs:
-  quality:
+  test:
     runs-on: ubuntu-latest
     strategy:
-      fail-fast: false
       matrix:
-        python-version: [ "3.9", "3.10", "3.11", "3.12" ]
+        python-version: [ "3.9", "3.10", "3.11", "3.12", "3.13" ]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: 'poetry'
+      - name: Clear coverage
+        run: |
+          poetry install --only test
+          poetry run python -m coverage erase
+      - name: Run unit tests
+        run: |
+          poetry run python -m coverage run -m unittest discover -s test/unit_test
+      - name: Run functional tests
+        run: |
+          poetry run python -m coverage run -a -m unittest discover -s test/functional_test
+      - name: Check coverage
+        run: |
+          poetry run python -m coverage report
+
+  quality:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Install Poetry
@@ -18,11 +39,11 @@ jobs:
           pipx install poetry
       - uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: "3.12"
           cache: 'poetry'
       - name: Install Dependencies
         run: |
-          poetry env use ${{ matrix.python-version }}
+          poetry env use 3.12
       - name: Run black
         run: |
           poetry install --only black

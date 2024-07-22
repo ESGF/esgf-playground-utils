@@ -34,6 +34,9 @@ pre-commit = "^3.7.1"
 xenon = "^0.9.1"
 pre-commit = "^3.7.1"
 
+[tool.poetry.group.test.dependencies]
+coverage = "^7.6.0"
+
 [tool.mypy]
 plugins = [
     "pydantic.mypy"
@@ -56,6 +59,9 @@ target-version = "py39"
 [tool.ruff.format]
 docstring-code-format = true
 indent-style = "space"
+
+[tool.coverage.report]
+fail_under = 100
 
 [build-system]
 requires = ["poetry-core"]
