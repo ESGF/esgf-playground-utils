@@ -65,11 +65,11 @@ jobs:
       - name: Run audit
         run: |
           pipx inject poetry poetry-audit-plugin
-          poetry audit
+          poetry audit $(poetry run python -c "import tomllib; f = open('pyproject.toml','rb') ; data =  tomllib.load(f); f.close(); ignore_codes = data['tool']['quality']['audit']['ignore-code']; print('--ignore-code=' + ','.join(ignore_codes)) if ignore_codes else print('')")
       - name: Run xenon
         run: |
           poetry install --only xenon
-          poetry run xenon . -a A -b A -m A
+          poetry run xenon -a $(poetry run python -c "import tomllib; f = open('pyproject.toml','rb') ; data =  tomllib.load(f); f.close(); print(data['tool']['quality']['mccabe']['average'])") -b $(poetry run python -c "import tomllib; f = open('pyproject.toml','rb') ; data =  tomllib.load(f); f.close(); print(data['tool']['quality']['mccabe']['block'])") -m $(poetry run python -c "import tomllib; f = open('pyproject.toml','rb') ; data =  tomllib.load(f); f.close(); print(data['tool']['quality']['mccabe']['module'])") .
       - name: Run mypy
         run: |
           poetry install --with mypy
