@@ -1,34 +1,54 @@
 fail_fast: true
 repos:
-- repo: local
-  hooks:
-    - id: black
-      name: black
-      entry: poetry run black
-      language: system
-      types: [file, python]
-    - id: isort
-      name: isort
-      entry: poetry run isort
-      language: system
-      types: [file, python]
-    - id: ruff
-      name: ruff
-      entry: poetry run ruff check --fix
-      language: system
-      types: [file, python]
-    - id: bandit
-      name: bandit
-      entry: poetry run bandit -c pyproject.toml -r .
-      language: system
-      types: [file, python]
-    - id: xenon
-      name: xenon
-      entry: bash -c "poetry run xenon -a $(poetry run python -c \"import tomllib; f = open('pyproject.toml','rb') ; data =  tomllib.load(f); f.close(); print(data['tool']['quality']['mccabe']['average'])\") -b $(poetry run python -c \"import tomllib; f = open('pyproject.toml','rb') ; data =  tomllib.load(f); f.close(); print(data['tool']['quality']['mccabe']['block'])\") -m $(poetry run python -c \"import tomllib; f = open('pyproject.toml','rb') ; data =  tomllib.load(f); f.close(); print(data['tool']['quality']['mccabe']['module'])\") . "
-      language: system
-      types: [file, python]
-    - id: mypy
-      name: mypy
-      entry: poetry run mypy --no-namespace-packages --exclude esgf_playground_utils/models/__init__.py
-      language: system
-      types: [ file, python ]
+  - repo: https://github.com/python-poetry/poetry
+    rev: '1.8.3'  # add version here
+    hooks:
+      - id: poetry-check
+      - id: poetry-lock
+  - repo: local
+    hooks:
+      - id: black
+        name: black
+        entry: poetry run black
+        language: system
+        types: [ file, python ]
+      - id: isort
+        name: isort
+        entry: poetry run isort
+        language: system
+        types: [ file, python ]
+      - id: ruff linter
+        name: ruff lint
+        entry: poetry run ruff check --fix
+        language: system
+        types: [ file, python ]
+      - id: bandit
+        name: bandit
+        entry: poetry run bandit -c pyproject.toml -r .
+        language: system
+        types: [ file, python ]
+      - id: xenon
+        name: xenon
+        entry: bash -c "poetry run xenon -a $(poetry run python -c \"import tomllib; f = open('pyproject.toml','rb') ; data =  tomllib.load(f); f.close(); print(data['tool']['quality']['mccabe']['average'])\") -b $(poetry run python -c \"import tomllib; f = open('pyproject.toml','rb') ; data =  tomllib.load(f); f.close(); print(data['tool']['quality']['mccabe']['block'])\") -m $(poetry run python -c \"import tomllib; f = open('pyproject.toml','rb') ; data =  tomllib.load(f); f.close(); print(data['tool']['quality']['mccabe']['module'])\") . "
+        language: system
+        types: [ file, python ]
+      - id: mypy
+        name: mypy
+        entry: poetry run mypy --no-namespace-packages --exclude esgf_playground_utils/models/__init__.py
+        language: system
+        types: [ file, python ]
+      - id: bandit
+        name: bandit
+        entry: poetry run bandit -c pyproject.toml -r .
+        language: system
+        types: [ file, python ]
+      - id: xenon
+        name: xenon
+        entry: bash -c "poetry run xenon -a $(poetry run python -c \"import tomllib; f = open('pyproject.toml','rb') ; data =  tomllib.load(f); f.close(); print(data['tool']['quality']['mccabe']['average'])\") -b $(poetry run python -c \"import tomllib; f = open('pyproject.toml','rb') ; data =  tomllib.load(f); f.close(); print(data['tool']['quality']['mccabe']['block'])\") -m $(poetry run python -c \"import tomllib; f = open('pyproject.toml','rb') ; data =  tomllib.load(f); f.close(); print(data['tool']['quality']['mccabe']['module'])\") . "
+        language: system
+        types: [ file, python ]
+      - id: mypy
+        name: mypy
+        entry: poetry run mypy --no-namespace-packages --exclude esgf_playground_utils/models/__init__.py
+        language: system
+        types: [ file, python ]

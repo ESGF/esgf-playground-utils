@@ -28,12 +28,14 @@ foo@bar:~$ poetry run install pre-commit
 
 When you commit, the following checks will be run:
 
-- black[^1] (python style formatter)
-- isort[^1] (python import order checker)
-- ruff[^1]  (python linter)
-- mypy      (python static type analysis)
-- bandit    (pythin SAST analyis)
-- xenon     (McCabe cyclomatc complexity analysis)
+- poetry-check       (checks the conformity of the pyproject.toml and poetry.lock file)
+- poetry-lock[^1]    (ensures an up-to-date lock file)
+- black[^1]          (python style formatter)
+- isort[^1]          (python import order checker)
+- ruff linter[^1]    (python linter)
+- mypy               (python static type analysis)
+- bandit             (python SAST analyis)
+- xenon              (McCabe cyclomatc complexity analysis)
 
 You can disable the `pre-commit hooks` per commit with the flag `--no-verify` however all checks will be preformed in the CI.
 
