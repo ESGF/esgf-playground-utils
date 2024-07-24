@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "esgf-playground-utils"
-version = "0.3.1-alpha.1"
+version = "0.3.1-alpha.2"
 description = "Common library and models for the ESGF-Playground"
 authors = [
     "David Poulter <david.poulter@stfc.ac.uk>",
@@ -39,6 +39,13 @@ pre-commit = "^3.7.1"
 
 [tool.poetry.group.test.dependencies]
 coverage = { extras = ["toml"], version = "^7.6.0" }
+
+
+[tool.poetry.group.docs.dependencies]
+sphinx = "^7.4.7"
+sphinx-autoapi = "^3.2.1"
+sphinx-pydantic = "^0.1.1"
+sphinx-rtd-theme = "^2.0.0"
 
 [tool.mypy]
 plugins = [
