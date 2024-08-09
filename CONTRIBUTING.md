@@ -36,6 +36,7 @@ When you commit, the following checks will be run:
 - mypy               (python static type analysis)
 - bandit             (python SAST analyis)
 - xenon              (McCabe cyclomatc complexity analysis)
+- sphinx             (dry-run documentation build)
 
 You can disable the `pre-commit hooks` per commit with the flag `--no-verify` however all checks will be preformed in the CI.
 
@@ -49,7 +50,7 @@ foo@bar:~$ poetry run pre-commit run -a
 
 The CI Enviroment runs the same checks as the `pre-commit hooks` on push[^2] plus the following additional checks:
 
-- audit  (checks all dependencies for vulnerabilities) 
+- audit  (checks all dependencies for vulnerabilities)
 
 [^1]: These pre-commit hooks will attempt to fix the issue in place
 [^2]: On CI, no checks perform code changes in place
