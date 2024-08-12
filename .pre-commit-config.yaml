@@ -56,4 +56,4 @@ repos:
         name: docs
         entry: bash -c "poetry run sphinx-build -M dummy ./docs ./docs/_build -W -q -a"
         language: system
-        types: [ file, python ]
+        types: [ file, python, rst, toml ]
