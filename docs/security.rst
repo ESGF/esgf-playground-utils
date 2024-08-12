@@ -1,1 +1,1 @@
-.. include:: ../SECURITY.rst
+.. mdinclude:: ../SECURITY.md

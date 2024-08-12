@@ -629,6 +629,17 @@ files = [
 ]
 
 [[package]]
+name = "mistune"
+version = "3.0.2"
+description = "A sane and fast Markdown parser with useful plugins and renderers"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "mistune-3.0.2-py3-none-any.whl", hash = "sha256:71481854c30fdbc938963d3605b72501f5c10a9320ecd412c121c163a1c7d205"},
+    {file = "mistune-3.0.2.tar.gz", hash = "sha256:fc7f93ded930c92394ef2cb6f04a8aabab4117a91449e72dcc8dfa646a508be8"},
+]
+
+[[package]]
 name = "mypy"
 version = "1.11.1"
 description = "Optional static typing for Python"
@@ -1179,6 +1190,26 @@ pyyaml = "*"
 requests = "*"
 
 [[package]]
+name = "sphinx-mdinclude"
+version = "0.6.2"
+description = "Markdown extension for Sphinx"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "sphinx_mdinclude-0.6.2-py3-none-any.whl", hash = "sha256:648e78edb067c0e4bffc22943278d49d54a0714494743592032fa3ad82a86984"},
+    {file = "sphinx_mdinclude-0.6.2.tar.gz", hash = "sha256:447462e82cb8be61404a2204227f920769eb923d2f57608e3325f3bb88286b4c"},
+]
+
+[package.dependencies]
+docutils = ">=0.19,<1.0"
+mistune = ">=3.0,<4.0"
+pygments = ">=2.8"
+sphinx = ">=6"
+
+[package.extras]
+dev = ["attribution (==1.7.1)", "black (==24.4.2)", "coverage (==7.5.1)", "docutils (==0.20.1)", "docutils (==0.21.2)", "flake8 (==7.0.0)", "flit (==3.9.0)", "mistune (==3.0.2)", "mypy (==1.10.0)", "sphinx (==7.1.2)", "sphinx (==7.3.7)", "ufmt (==2.5.1)", "usort (==1.0.8.post1)"]
+
+[[package]]
 name = "sphinx-pydantic"
 version = "0.1.1"
 description = "Generate Sphinx documentation from PyDantic objects."
@@ -1448,4 +1479,4 @@ test = ["big-O", "importlib-resources", "jaraco.functools", "jaraco.itertools", 
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9"
-content-hash = "1c287723c28eaeb923d3f60e9921956bda96c2a0610a237fa3d8cec49ed97250"
+content-hash = "a1344b36db6da27abdaaf597238ac592eb8f5823ee2b85f823521077837ee07c"
