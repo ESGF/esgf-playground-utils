@@ -16,4 +16,5 @@ ESGF Playground Utils documentation
    contributing
    code_of_conduct
    license
+   changelog
 
