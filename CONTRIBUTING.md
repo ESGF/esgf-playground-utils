@@ -9,7 +9,7 @@ feel free to create one.
 
 ## Development environment
 
-Begin by collecting the repo from github.
+Begin by collecting the repo from [GitHub](https://github.com/ESGF/esgf-playground-utils).
 
 To contribute, you should be using `poetry` as your python package
 manager, see <https://python-poetry.org> for installation instructions.
@@ -54,6 +54,7 @@ You can also (and are encouraged to) run the `pre-commit hooks` manually
 as often as you like with:
 
 ``` shell
+foo@bar:~$ git stage -A
 foo@bar:~$ poetry run pre-commit run -a
 ```
 
