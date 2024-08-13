@@ -389,6 +389,7 @@ class TestKafkaEvent(unittest.TestCase):
     "payload": {
       "collection_id": "cmip6",
       "method": "PUT",
+      "item_id": "an_item",
       "item": {
         "bbox": [
           -71.04548482586011,

@@ -55,16 +55,11 @@ class RevokePayload(_Payload):
 class UpdatePayload(_Payload):
     """
     Model describing a ``UPDATE`` payload. This must be sent as a ``PATCH`` or ``PUT`` request.
-
-    .. danger::
-
-        The behaviour of the ``PATCH`` request is not yet fully defined. Specifically, it is not clear
-        if the ``PATCH`` request will require a specific ``item_id``, and as such will require an alternative
-        model.
     """
 
     method: Literal["PUT", "PATCH"]
     item: Item
+    item_id: str
 
 
 class Data(BaseModel):
