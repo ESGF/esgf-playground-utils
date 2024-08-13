@@ -6,8 +6,23 @@ All notable changes to this package are recorded in this document.
 This format is based on `Keep a ChangeLog <https://keepachangelog.com/>`_ and this project
 adheres to `Semantic Versioning <https://semver.org>`_.
 
-[Unreleased - 0.3.1] - 2024-08-13
----------------------------------
+[Unreleased]
+------------
+
+Added
+^^^^^
+
+Changed
+^^^^^^^
+
+Removed
+^^^^^^^
+
+Fixed
+^^^^^
+
+[0.3.1] <https://github.com/ESGF/esgf-playground-utils/releases/tag/0.3.1>`_ - 2024-08-13
+------------------------------------------------------------------------------------------
 
 Added
 ^^^^^
