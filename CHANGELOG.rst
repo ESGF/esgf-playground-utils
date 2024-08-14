@@ -16,6 +16,7 @@ Changed
 ^^^^^^^
 
 - Corrected typo in CHANGELOG
+- Removed duplication in pre-commit configuration
 
 Removed
 ^^^^^^^
