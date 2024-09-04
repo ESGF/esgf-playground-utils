@@ -84,7 +84,7 @@ class Data(BaseModel):
 
     type: Literal["STAC"]
     version: Literal["1.0.0"]
-    payload: Union[CreatePayload, RevokePayload, UpdatePayload]
+    payload: Union[CreatePayload, RevokePayload, UpdatePayload, PartialUpdatePayload]
 
 
 class Auth(BaseModel):
