@@ -19,6 +19,8 @@ Added
 Changed
 ^^^^^^^
 
+-Updated poetry (1.82 -> 1.83)
+
 Removed
 ^^^^^^^
 
