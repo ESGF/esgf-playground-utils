@@ -9,6 +9,22 @@ adheres to `Semantic Versioning <https://semver.org>`_.
 [Unreleased] - 2024-09-04
 -------------------------
 
+`0.3.3 <https://github.com/ESGF/esgf-playground-utils/releases/tag/0.3.3>`_  - 2024-09-04
+-----------------------------------------------------------------------------------------
+
+Added
+^^^^^
+- Added new kafka PartialUpdatePayload to Data class
+
+Changed
+^^^^^^^
+
+Removed
+^^^^^^^
+
+Fixed
+^^^^^
+
 
 `0.3.2 <https://github.com/ESGF/esgf-playground-utils/releases/tag/0.3.2>`_  - 2024-09-04
 -----------------------------------------------------------------------------------------
