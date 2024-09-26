@@ -6,6 +6,7 @@ authors = [
     "David Poulter <david.poulter@stfc.ac.uk>",
     "Rhys Evans <rhys.r.evans@stfc.ac.uk>",
     "Ed Borthwick <ed.borthwick@stfc.ac.uk>",
+    "Danny Lloyd <danny.lloyd@stfc.ac.uk>"
 ]
 readme = "README.rst"
 
