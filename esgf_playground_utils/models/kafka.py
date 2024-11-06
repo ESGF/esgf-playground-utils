@@ -4,7 +4,7 @@ Models relating to Kakfa payloads for the ESGF-Playground.
 
 from datetime import datetime
 from enum import Enum
-from typing import Any, Dict, Literal, Union
+from typing import Any, Dict, List, Literal, Union
 
 from pydantic import BaseModel
 from stac_pydantic.item import Item
@@ -99,6 +99,17 @@ class Auth(BaseModel):
 
     client_id: str
     server: str
+
+
+class AuthData(BaseModel):
+    """
+    Model describing ``Auth`` component of a Kafka message in more detail.
+    """
+
+    auth_policy_id: str
+    target_data: Dict[str, str]
+    requester_data: Dict[str, str]
+    auth_basis_data: Dict[str, Union[str, List[Dict[str, str]]]]
 
 
 class Publisher(BaseModel):
