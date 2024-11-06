@@ -127,7 +127,7 @@ class Metadata(BaseModel):
     Multiple metadata attributes required for ESGF but not part of the STAC payload.
     """
 
-    auth: Auth | AuthData
+    auth: Union[Auth, AuthData]
     publisher: Publisher
     time: datetime
     schema_version: str
