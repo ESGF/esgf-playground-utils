@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "esgf-playground-utils"
-version = "0.3.4"
+version = "0.3.5"
 description = "Common library and models for the ESGF-Playground"
 authors = [
     "David Poulter <david.poulter@stfc.ac.uk>",
