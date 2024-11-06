@@ -9,7 +9,7 @@ adheres to `Semantic Versioning <https://semver.org>`_.
 [Unreleased] - 2024-09-04
 -------------------------
 
-`0.3.3 <https://github.com/ESGF/esgf-playground-utils/releases/tag/0.3.4>`_  - 2024-11-06
+`0.3.4 <https://github.com/ESGF/esgf-playground-utils/releases/tag/0.3.4>`_  - 2024-11-06
 -----------------------------------------------------------------------------------------
 
 Added
