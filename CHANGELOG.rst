@@ -9,6 +9,26 @@ adheres to `Semantic Versioning <https://semver.org>`_.
 [Unreleased] - 2024-09-04
 -------------------------
 
+`0.3.3 <https://github.com/ESGF/esgf-playground-utils/releases/tag/0.3.4>`_  - 2024-11-06
+-----------------------------------------------------------------------------------------
+
+Added
+^^^^^
+- Added AuthData model (:py:class:`esgf_playground_utils.models.kafka.AuthData`) for adding 
+  more detailed auth data to a publish event
+
+Changed
+^^^^^^^
+
+-Updated virtualenv (20.26.3 -> 20.27.1)
+
+Removed
+^^^^^^^
+
+Fixed
+^^^^^
+
+
 `0.3.3 <https://github.com/ESGF/esgf-playground-utils/releases/tag/0.3.3>`_  - 2024-09-04
 -----------------------------------------------------------------------------------------
 
@@ -19,7 +39,7 @@ Added
 Changed
 ^^^^^^^
 
--Updated poetry (1.82 -> 1.83)
+- Updated poetry (1.82 -> 1.83)
 
 Removed
 ^^^^^^^
