@@ -38,3 +38,4 @@ html_static_path = ["_static"]
 # Autoapi Configuration
 autoapi_dirs = ["../esgf_playground_utils"]
 master_doc = "index"
+autoapi_keep_files = True
