@@ -1,16 +1,22 @@
 """
 Test the functionality of the :py:mod:`models.item` module.
+
+.. note:
+
+  These tests call wrapped methods which quality control tools may not recognise as callable. Some quality
+  measures are suppressed for this test case.
+
 """
 
 from unittest import TestCase
 from unittest.mock import Mock
 
-from models.item import ESGFItemProperties
+from esgf_playground_utils.models.item import ESGFItemProperties
 
 
 class TestESGFItemPropertiesCheckInstanceId(TestCase):
     """
-    Test the functionality of the :py:ref:`models.item.ESGFItemProperties.check_instance_id` method
+    Test the functionality of the :py:ref:`models.item.ESGFItemProperties.check_instance_id` method.
     """
 
     def test_with_valid_input(self) -> None:
@@ -28,7 +34,7 @@ class TestESGFItemPropertiesCheckInstanceId(TestCase):
         mock_instance.grid_label = "i"
         mock_instance.instance_id = "a.b.c.d.e.f.g.h.i.v200202"
 
-        ESGFItemProperties.check_instance_id(mock_instance)
+        ESGFItemProperties.check_instance_id(mock_instance)  # type: ignore
 
     def test_with_invalid_input(self) -> None:
         """Should raise a :py:exc:`ValueError`"""
@@ -46,4 +52,4 @@ class TestESGFItemPropertiesCheckInstanceId(TestCase):
         mock_instance.instance_id = "a.b.c.d.e.f.g.h.i.v200202"
 
         with self.assertRaises(ValueError):
-            ESGFItemProperties.check_instance_id(mock_instance)
+            ESGFItemProperties.check_instance_id(mock_instance)  # type: ignore
