@@ -2,8 +2,11 @@
 Models relating to STAC Items for the ESGF-Playground.
 """
 
-from pydantic import AnyUrl
+import re
+
+from pydantic import AnyUrl, model_validator
 from stac_pydantic.item import Item, ItemProperties
+from typing_extensions import Self
 
 
 class ESGFItem(Item):
@@ -33,3 +36,26 @@ class ESGFItemProperties(ItemProperties):
     variable_id: str
     variant_label: str
     instance_id: str
+
+    @model_validator(mode="after")
+    def check_instance_id(self: Self) -> Self:
+        """
+        The instance_id value is a constructed value from other fields, validate that this is the case and
+        raise a validation error if it is not.
+        """
+
+        predictable_instance_id = (
+            f"{self.mip_era}.{self.activity_id}.{self.institution_id}.{self.source_id}."
+            f"{self.experiment_id}.{self.variant_label}.{self.table_id}.{self.variable_id}."
+            f"{self.grid_label}"
+        )
+
+        expected_instance_id_pattern = rf"{predictable_instance_id}\..*"
+        if re.match(expected_instance_id_pattern, self.instance_id):
+            return self
+
+        raise ValueError(
+            f"The instance_id did not match other values provided. "
+            f"It should have been in the form '{predictable_instance_id}.<some_version>' "
+            f"however is was '{self.instance_id}'."
+        )
