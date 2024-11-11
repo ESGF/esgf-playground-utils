@@ -12,6 +12,8 @@ adheres to `Semantic Versioning <https://semver.org>`_.
 Added
 ^^^^^
 
+  - Added defusedxml (0.7.1)
+
 Changed
 ^^^^^^^
 

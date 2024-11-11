@@ -4,6 +4,7 @@ Models relating to STAC Items for the ESGF-Playground.
 
 import re
 
+from models.validators import CFStandardNameStr
 from pydantic import AnyUrl, model_validator
 from stac_pydantic.item import Item, ItemProperties
 from typing_extensions import Self
@@ -17,7 +18,7 @@ class ESGFItemProperties(ItemProperties):
     citation_url: AnyUrl
     variable_long_name: str
     variable_units: str
-    cf_standard_name: str
+    cf_standard_name: CFStandardNameStr
     activity_id: str
     data_specs_version: str
     experiment_title: str
