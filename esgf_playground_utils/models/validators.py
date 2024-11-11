@@ -2,7 +2,8 @@
 
 from pydantic import BeforeValidator
 from typing_extensions import Annotated
-from utils.cf import get_standard_names
+
+from esgf_playground_utils.utils.cf import get_standard_names
 
 
 def validate_cf_standard_name(value: str) -> str:

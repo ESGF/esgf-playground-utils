@@ -4,10 +4,11 @@ Models relating to STAC Items for the ESGF-Playground.
 
 import re
 
-from models.validators import CFStandardNameStr
 from pydantic import AnyUrl, model_validator
 from stac_pydantic.item import Item, ItemProperties
 from typing_extensions import Self
+
+from esgf_playground_utils.models.validators import CFStandardNameStr
 
 
 class ESGFItem(Item):
