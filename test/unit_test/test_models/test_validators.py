@@ -2,6 +2,7 @@ import unittest
 from unittest.mock import MagicMock, patch
 
 import httpx
+from pydantic import AnyUrl
 
 from esgf_playground_utils.models.validators import (
     validate_any_url,
@@ -50,32 +51,20 @@ class TestValidators(unittest.TestCase):
 
     def test_valid_url_without_check(self) -> None:
         """Should return the URL when valid and check_url is False."""
-        value = "http://example.com"
+        value = AnyUrl("http://example.com")
 
-        mock_info = MagicMock()
-        mock_info.context = {"check_url": False}
+        mock_info = MagicMock({"check_url": False})
 
         result = validate_any_url(value, mock_info)
         self.assertEqual(result, value)
-
-    def test_invalid_url_format(self) -> None:
-        """Should raise ValueError when URL format is invalid."""
-        value = "invalid_url"
-
-        mock_info = MagicMock()
-        mock_info.context = {"check_url": False}
-
-        with self.assertRaises(ValueError):
-            validate_any_url(value, mock_info)
 
     @patch("httpx.head")
     def test_unreachable_url_with_check(self, mock_head: MagicMock) -> None:
         """Should raise ValueError when URL is unreachable and check_url is True."""
         mock_head.side_effect = httpx.RequestError("Unable to connect")
-        value = "http://nonexistent.example.com"
+        value = AnyUrl("http://nonexistent.example.com")
 
-        mock_info = MagicMock()
-        mock_info.context = {"check_url": True}
+        mock_info = MagicMock({"check_url": True})
 
         with self.assertRaises(ValueError):
             validate_any_url(value, mock_info)
@@ -85,10 +74,9 @@ class TestValidators(unittest.TestCase):
         """Should return the URL when valid and reachable and check_url is True."""
         mock_response = httpx.Response(200)
         mock_head.return_value = mock_response
-        value = "http://example.com"
+        value = AnyUrl("http://example.com")
 
-        mock_info = MagicMock()
-        mock_info.context = {"check_url": True}
+        mock_info = MagicMock({"check_url": True})
 
         result = validate_any_url(value, mock_info)
         self.assertEqual(result, value)

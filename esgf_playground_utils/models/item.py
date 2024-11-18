@@ -46,7 +46,7 @@ class ESGFItemProperties(ItemProperties):
         raise a validation error if it is not.
         """
 
-        predictable_instance_id = predictable_instance_id = (
+        predictable_instance_id = (
             f"{self.mip_era}.{self.activity_id}.{self.institution_id}.{self.source_id}."
             f"{self.experiment_id}.{self.variant_label}.{self.table_id}.{self.variable_id}."
             f"{self.grid_label}"
@@ -77,8 +77,8 @@ class ESGFItemProperties(ItemProperties):
             )
 
         context = info.context or {}
-        if context.get("check_url", False):
-            validate_any_url(str(self.citation_url), info)
+        if context.get("check_url"):
+            validate_any_url(self.citation_url, info)
 
         return self
 
@@ -96,7 +96,7 @@ class ESGFItemProperties(ItemProperties):
             )
 
         context = info.context or {}
-        if context.get("check_url", False):
-            validate_any_url(str(self.further_info_url), info)
+        if context.get("check_url"):
+            validate_any_url(self.further_info_url, info)
 
         return self

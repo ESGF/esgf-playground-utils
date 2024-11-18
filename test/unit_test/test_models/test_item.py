@@ -86,7 +86,7 @@ class TestESGFItemPropertiesCheckCitationURL(TestCase):
             ESGFItemProperties.check_citation_url(mock_instance)  # type: ignore
 
 
-class TestTestESGFItemPropertiesCheckFurtherInfoURL(TestCase):
+class TestESGFItemPropertiesCheckFurtherInfoURL(TestCase):
     """
     Test the functionality of the :py:ref:`models.item.ESGFItemProperties.check_further_info_url` method.
     """
