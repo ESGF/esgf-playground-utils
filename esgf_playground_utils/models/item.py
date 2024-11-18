@@ -4,11 +4,12 @@ Models relating to STAC Items for the ESGF-Playground.
 
 import re
 
-from pydantic import AnyUrl, model_validator
+import httpx
+from pydantic import AnyUrl, ValidationInfo, field_validator, model_validator
 from stac_pydantic.item import Item, ItemProperties
 from typing_extensions import Self
 
-from esgf_playground_utils.models.validators import CFStandardNameStr
+from esgf_playground_utils.models.validators import CFStandardNameStr, validate_any_url
 
 
 class ESGFItem(Item):
@@ -46,7 +47,7 @@ class ESGFItemProperties(ItemProperties):
         raise a validation error if it is not.
         """
 
-        predictable_instance_id = (
+        predictable_instance_id = predictable_instance_id = (
             f"{self.mip_era}.{self.activity_id}.{self.institution_id}.{self.source_id}."
             f"{self.experiment_id}.{self.variant_label}.{self.table_id}.{self.variable_id}."
             f"{self.grid_label}"
@@ -61,3 +62,42 @@ class ESGFItemProperties(ItemProperties):
             f"It should have been in the form '{predictable_instance_id}.<some_version>' "
             f"however is was '{self.instance_id}'."
         )
+
+    @model_validator(mode="after")
+    def check_citation_url(self: Self, info: ValidationInfo) -> Self:
+        """
+        Validate `citation_url` by constructing it and optionally checking its existence.
+        """
+        expected_url = (
+            f"http://cera-www.dkrz.de/WDCC/meta/{self.mip_era}/{self.instance_id}.json"
+        )
+
+        if str(self.citation_url) != expected_url:
+            raise ValueError(
+                f"citation_url should be '{expected_url}', but got '{self.citation_url}'"
+            )
+
+        context = info.context or {}
+        if context.get("check_url", False):
+            validate_any_url(str(self.citation_url), info)
+
+        return self
+
+    @model_validator(mode="after")
+    def check_further_info_url(self: Self, info: ValidationInfo) -> Self:
+        """
+        Validate `further_info_url` by constructing it and optionally checking its existence.
+        """
+
+        expected_url = f"https://furtherinfo.es-doc.org/{self.instance_id}"
+
+        if str(self.further_info_url) == expected_url:
+            raise ValueError(
+                f"further_info_url should be '{expected_url}', but got '{self.further_info_url}'"
+            )
+
+        context = info.context or {}
+        if context.get("check_url", False):
+            validate_any_url(str(self.further_info_url), info)
+
+        return self

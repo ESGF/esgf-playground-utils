@@ -1,6 +1,7 @@
 """Validated Types for ESGF data values"""
 
-from pydantic import BeforeValidator
+import httpx
+from pydantic import AnyUrl, BeforeValidator, ValidationInfo
 from typing_extensions import Annotated
 
 from esgf_playground_utils.utils.cf import get_standard_names
@@ -20,3 +21,18 @@ def validate_cf_standard_name(value: str) -> str:
 
 
 CFStandardNameStr = Annotated[str, BeforeValidator(validate_cf_standard_name)]
+
+
+def validate_any_url(value: str, info: ValidationInfo) -> str:
+    """Ensure that the `AnyUrl` value is a valid URL"""
+
+    url = AnyUrl(value)
+    context = info.context or {}
+    check = context.get("check_url", False)
+    if check:
+        try:
+            response = httpx.head(url, timeout=5)
+            response.raise_for_status()
+        except httpx.HTTPStatusError:
+            raise ValueError(f"URL {url} is not valid")
+    return value
