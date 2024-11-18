@@ -4,8 +4,7 @@ Models relating to STAC Items for the ESGF-Playground.
 
 import re
 
-import httpx
-from pydantic import AnyUrl, ValidationInfo, field_validator, model_validator
+from pydantic import AnyUrl, ValidationInfo, model_validator
 from stac_pydantic.item import Item, ItemProperties
 from typing_extensions import Self
 
