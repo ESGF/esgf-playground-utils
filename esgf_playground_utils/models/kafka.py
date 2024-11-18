@@ -4,7 +4,7 @@ Models relating to Kakfa payloads for the ESGF-Playground.
 
 from datetime import datetime
 from enum import Enum
-from typing import Any, Dict, List, Literal, Union
+from typing import Any, Dict, Literal, Union
 
 from pydantic import BaseModel
 from stac_pydantic.item import Item
@@ -107,9 +107,8 @@ class AuthData(BaseModel):
     """
 
     auth_policy_id: str
-    target_data: Dict[str, str]
+    client_id: str
     requester_data: Dict[str, str]
-    auth_basis_data: Dict[str, Union[str, List[Dict[str, str]]]]
 
 
 class Publisher(BaseModel):
