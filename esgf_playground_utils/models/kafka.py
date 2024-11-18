@@ -4,7 +4,7 @@ Models relating to Kakfa payloads for the ESGF-Playground.
 
 from datetime import datetime
 from enum import Enum
-from typing import Any, Dict, List, Literal, Union
+from typing import Any, Dict, Literal, Union
 
 from pydantic import BaseModel
 from stac_pydantic.item import Item
