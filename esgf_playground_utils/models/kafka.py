@@ -107,9 +107,8 @@ class AuthData(BaseModel):
     """
 
     auth_policy_id: str
-    target_data: Dict[str, str]
+    client_id: str
     requester_data: Dict[str, str]
-    auth_basis_data: Dict[str, Union[str, List[Dict[str, str]]]]
 
 
 class Publisher(BaseModel):
