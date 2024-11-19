@@ -132,6 +132,15 @@ class Metadata(BaseModel):
     schema_version: str
 
 
+class ExtendedMetadata(Metadata):
+    """
+    An extension of the Metadata Model for Publish Events.
+    """
+
+    event_id: str
+    request_id: str
+
+
 class KafkaEvent(BaseModel):
     """
     The full content of a Kafka message, containing both the STAC payload, the request description and the ESGF
