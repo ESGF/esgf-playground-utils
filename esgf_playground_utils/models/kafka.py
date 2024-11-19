@@ -147,7 +147,7 @@ class KafkaEvent(BaseModel):
     mandated metadata.
     """
 
-    metadata: Metadata
+    metadata: Union[Metadata, ExtendedMetadata]
     data: Data
 
 
