@@ -9,6 +9,21 @@ adheres to `Semantic Versioning <https://semver.org>`_.
 [Unreleased] - 2024-09-04
 -------------------------
 
+`0.3.7 <https://github.com/ESGF/esgf-playground-utils/releases/tag/0.3.7>`_  - 2024-11-19
+-----------------------------------------------------------------------------------------
+
+Added
+^^^^^
+- A new model which is an extension of the Metadata Model for Publish Events.
+
+Changed
+^^^^^^^
+
+Removed
+^^^^^^^
+
+Fixed
+
 `0.3.6 <https://github.com/ESGF/esgf-playground-utils/releases/tag/0.3.6>`_  - 2024-11-18
 -----------------------------------------------------------------------------------------
 
