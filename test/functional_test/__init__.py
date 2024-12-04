@@ -149,16 +149,25 @@ class TestKafkaEvent(unittest.TestCase):
     }
   },
   "metadata": {
+    "event_id": "3a8a2536-323b-4259-a218-6002a3491d25",
+    "request_id": "dee8c54c-e815-4863-87fb-7b606efd2501",
     "auth": {
-      "client_id": "<KEY>",
-      "server": "<SERVER>"
+        "auth_policy_id": "ESGF-Publish-00012",   # We need registered auth policies?
+        "client_id": "CEDA-transaction-client",
+        "requester_data": {
+          "auth_service": "auth.globus.org",
+          "sub": "b16b12b6-d274-11e5-8e41-5fea585a1aa2",
+          "user_id": "7fd9ab20-f6c5-4902-a7ac-b40bc4d8ad7b",
+          "identity_provider": "0dcf5063-bffd-40f7-b403-24f97e32fa47",
+          "identity_provider_display_name": "University of Chicago"
+        }
     },
     "publisher": {
-      "package": "some_python_package",
-      "version": "0.3.0"
+        "package": "some_python_package",
+        "version": "0.3.0"
     },
-    "time": "2022-01-20T00:00:00Z",
-    "schema_version": "1.0.0"
+    "time": "2024-07-04T14:17:35Z",
+    "schema_version": "1.0.0",
   }
 }
 """
@@ -299,16 +308,25 @@ class TestKafkaEvent(unittest.TestCase):
     }
   },
   "metadata": {
+    "event_id": "3a8a2536-323b-4259-a218-6002a3491d25",
+    "request_id": "dee8c54c-e815-4863-87fb-7b606efd2501",
     "auth": {
-      "client_id": "<KEY>",
-      "server": "<SERVER>"
+        "auth_policy_id": "ESGF-Publish-00012",   # We need registered auth policies?
+        "client_id": "CEDA-transaction-client",
+        "requester_data": {
+          "auth_service": "auth.globus.org",
+          "sub": "b16b12b6-d274-11e5-8e41-5fea585a1aa2",
+          "user_id": "7fd9ab20-f6c5-4902-a7ac-b40bc4d8ad7b",
+          "identity_provider": "0dcf5063-bffd-40f7-b403-24f97e32fa47",
+          "identity_provider_display_name": "University of Chicago"
+        }
     },
     "publisher": {
-      "package": "some_python_package",
-      "version": "0.3.0"
+        "package": "some_python_package",
+        "version": "0.3.0"
     },
-    "time": "2022-01-20T00:00:00Z",
-    "schema_version": "1.0.0"
+    "time": "2024-07-04T14:17:35Z",
+    "schema_version": "1.0.0",
   }
 }
 """
@@ -329,16 +347,25 @@ class TestKafkaEvent(unittest.TestCase):
             }
           },
           "metadata": {
+            "event_id": "3a8a2536-323b-4259-a218-6002a3491d25",
+            "request_id": "dee8c54c-e815-4863-87fb-7b606efd2501",
             "auth": {
-              "client_id": "<KEY>",
-              "server": "<SERVER>"
+                "auth_policy_id": "ESGF-Publish-00012",   # We need registered auth policies?
+                "client_id": "CEDA-transaction-client",
+                "requester_data": {
+                  "auth_service": "auth.globus.org",
+                  "sub": "b16b12b6-d274-11e5-8e41-5fea585a1aa2",
+                  "user_id": "7fd9ab20-f6c5-4902-a7ac-b40bc4d8ad7b",
+                  "identity_provider": "0dcf5063-bffd-40f7-b403-24f97e32fa47",
+                  "identity_provider_display_name": "University of Chicago"
+                }
             },
             "publisher": {
-              "package": "some_python_package",
-              "version": "0.3.0"
+                "package": "some_python_package",
+                "version": "0.3.0"
             },
-            "time": "2022-01-20T00:00:00Z",
-            "schema_version": "1.0.0"
+            "time": "2024-07-04T14:17:35Z",
+            "schema_version": "1.0.0",
           }
         }
 """
@@ -360,16 +387,25 @@ class TestKafkaEvent(unittest.TestCase):
     }
   },
   "metadata": {
+    "event_id": "3a8a2536-323b-4259-a218-6002a3491d25",
+    "request_id": "dee8c54c-e815-4863-87fb-7b606efd2501",
     "auth": {
-      "client_id": "<KEY>",
-      "server": "<SERVER>"
+        "auth_policy_id": "ESGF-Publish-00012",   # We need registered auth policies?
+        "client_id": "CEDA-transaction-client",
+        "requester_data": {
+          "auth_service": "auth.globus.org",
+          "sub": "b16b12b6-d274-11e5-8e41-5fea585a1aa2",
+          "user_id": "7fd9ab20-f6c5-4902-a7ac-b40bc4d8ad7b",
+          "identity_provider": "0dcf5063-bffd-40f7-b403-24f97e32fa47",
+          "identity_provider_display_name": "University of Chicago"
+        }
     },
     "publisher": {
-      "package": "some_python_package",
-      "version": "0.3.0"
+        "package": "some_python_package",
+        "version": "0.3.0"
     },
-    "time": "2022-01-20T00:00:00Z",
-    "schema_version": "1.0.0"
+    "time": "2024-07-04T14:17:35Z",
+    "schema_version": "1.0.0",
   }
 }
 """
@@ -511,16 +547,25 @@ class TestKafkaEvent(unittest.TestCase):
     }
   },
   "metadata": {
+    "event_id": "3a8a2536-323b-4259-a218-6002a3491d25",
+    "request_id": "dee8c54c-e815-4863-87fb-7b606efd2501",
     "auth": {
-      "client_id": "<KEY>",
-      "server": "<SERVER>"
+        "auth_policy_id": "ESGF-Publish-00012",   # We need registered auth policies?
+        "client_id": "CEDA-transaction-client",
+        "requester_data": {
+          "auth_service": "auth.globus.org",
+          "sub": "b16b12b6-d274-11e5-8e41-5fea585a1aa2",
+          "user_id": "7fd9ab20-f6c5-4902-a7ac-b40bc4d8ad7b",
+          "identity_provider": "0dcf5063-bffd-40f7-b403-24f97e32fa47",
+          "identity_provider_display_name": "University of Chicago"
+        }
     },
     "publisher": {
-      "package": "some_python_package",
-      "version": "0.3.0"
+        "package": "some_python_package",
+        "version": "0.3.0"
     },
-    "time": "2022-01-20T00:00:00Z",
-    "schema_version": "1.0.0"
+    "time": "2024-07-04T14:17:35Z",
+    "schema_version": "1.0.0",
   }
 }
         """
