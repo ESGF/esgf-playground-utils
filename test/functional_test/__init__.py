@@ -167,7 +167,7 @@ class TestKafkaEvent(unittest.TestCase):
         "version": "0.3.0"
     },
     "time": "2024-07-04T14:17:35Z",
-    "schema_version": "1.0.0",
+    "schema_version": "1.0.0"
   }
 }
 """
@@ -326,7 +326,7 @@ class TestKafkaEvent(unittest.TestCase):
         "version": "0.3.0"
     },
     "time": "2024-07-04T14:17:35Z",
-    "schema_version": "1.0.0",
+    "schema_version": "1.0.0"
   }
 }
 """
@@ -365,7 +365,7 @@ class TestKafkaEvent(unittest.TestCase):
                 "version": "0.3.0"
             },
             "time": "2024-07-04T14:17:35Z",
-            "schema_version": "1.0.0",
+            "schema_version": "1.0.0"
           }
         }
 """
@@ -405,7 +405,7 @@ class TestKafkaEvent(unittest.TestCase):
         "version": "0.3.0"
     },
     "time": "2024-07-04T14:17:35Z",
-    "schema_version": "1.0.0",
+    "schema_version": "1.0.0"
   }
 }
 """
@@ -565,7 +565,7 @@ class TestKafkaEvent(unittest.TestCase):
         "version": "0.3.0"
     },
     "time": "2024-07-04T14:17:35Z",
-    "schema_version": "1.0.0",
+    "schema_version": "1.0.0"
   }
 }
         """
