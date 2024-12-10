@@ -92,9 +92,8 @@ class RequesterData(BaseModel):
     Model describing ``Requests Data`` for the ``Auth`` component of a Kafka message in more detail.
     """
 
-    auth_service: str
+    iss: str
     sub: str
-    user_id: str
     identity_provider: str
     identity_provider_display_name: str
 
