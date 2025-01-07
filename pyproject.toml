@@ -1,3 +1,8 @@
+[project]
+name = "esgf-playground-utils"
+description = "Common library and models for the ESGF-Playground"
+dynamic = ["version", "readme"]
+
 [tool.poetry]
 name = "esgf-playground-utils"
 version = "0.3.8"
