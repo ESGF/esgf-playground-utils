@@ -1,12 +1,12 @@
-[project]
+[tool.poetry]
 name = "esgf-playground-utils"
 version = "0.4.0"
 description = "Common library and models for the ESGF-Playground"
 readme = "README.rst"
 authors = [
-    {name = "David Poulter", email = "david.poulter@stfc.ac.uk"},
-    {name = "Rhys Evans", email = "rhys.r.evans@stfc.ac.uk"},
-    {name = "Ed Borthwick", email = "ed.borthwick@stfc.ac.uk"},
+    "David Poulter<david.poulter@stfc.ac.uk",
+    "Rhys Evans <rhys.r.evans@stfc.ac.uk>",
+    "Ed Borthwick <ed.borthwick@stfc.ac.uk>",
 ]
 
 [tool.poetry.dependencies]
