@@ -87,28 +87,30 @@ class Data(BaseModel):
     payload: Union[CreatePayload, RevokePayload, UpdatePayload, PartialUpdatePayload]
 
 
+class RequesterData(BaseModel):
+    """
+    Model describing ``Requests Data`` for the ``Auth`` component of a Kafka message in more detail.
+    """
+
+    iss: str
+    sub: str
+    identity_provider: str
+    identity_provider_display_name: str
+
+
 class Auth(BaseModel):
     """
-    Model describing the ``AUTH`` component of a Kafka message.
+    Model describing ``Auth`` component of a Kafka message in more detail.
 
-    .. note::
+     .. note::
 
       This is not an authorisation token or other verified identity. It is the simply an indication of the institute
       providing the message.
     """
 
-    client_id: str
-    server: str
-
-
-class AuthData(BaseModel):
-    """
-    Model describing ``Auth`` component of a Kafka message in more detail.
-    """
-
     auth_policy_id: str
     client_id: str
-    requester_data: Dict[str, str]
+    requester_data: RequesterData
 
 
 class Publisher(BaseModel):
@@ -126,19 +128,12 @@ class Metadata(BaseModel):
     Multiple metadata attributes required for ESGF but not part of the STAC payload.
     """
 
-    auth: Union[Auth, AuthData]
+    event_id: str
+    request_id: str
+    auth: Auth
     publisher: Publisher
     time: datetime
     schema_version: str
-
-
-class ExtendedMetadata(Metadata):
-    """
-    An extension of the Metadata Model for Publish Events.
-    """
-
-    event_id: str
-    request_id: str
 
 
 class KafkaEvent(BaseModel):
@@ -147,7 +142,7 @@ class KafkaEvent(BaseModel):
     mandated metadata.
     """
 
-    metadata: Union[Metadata, ExtendedMetadata]
+    metadata: Metadata
     data: Data
 
 

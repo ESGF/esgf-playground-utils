@@ -24,5 +24,7 @@ class Settings(BaseSettings):
     bootstrap_servers: List[str] = ["localhost"]
     consumer_group: Optional[str] = None
     kafka_topics: Pattern[str] = compile(r".*\..*\..*")
-    error_topic: str = "esgf_consumer_error"
+    sasl_mechanism: str = "PLAIN"
+    sasl_plain_username: Optional[str] = None
+    sasl_plain_password: Optional[str] = None
     stac_server: HttpUrl = HttpUrl("http://localhost:9010")
