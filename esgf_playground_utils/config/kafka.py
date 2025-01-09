@@ -25,6 +25,7 @@ class Settings(BaseSettings):
     consumer_group: Optional[str] = None
     kafka_topics: Pattern[str] = compile(r".*\..*\..*")
     sasl_mechanism: str = "PLAIN"
+    security_protocol: str = "PLAINTEXT"
     sasl_plain_username: Optional[str] = None
     sasl_plain_password: Optional[str] = None
     stac_server: HttpUrl = HttpUrl("http://localhost:9010")
