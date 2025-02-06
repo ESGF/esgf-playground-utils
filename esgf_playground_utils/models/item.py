@@ -19,8 +19,6 @@ class ESGFItemProperties(ItemProperties):
     cf_standard_name: str
     citation_url: HttpUrl
     data_spec_version: Optional[str] = None
-    datetime: Optional[datetimevalidate.datetime] = None
-    end_datetime: datetimevalidate.datetime
     experiment_id: str
     experiment_title: str
     frequency: str
@@ -38,7 +36,6 @@ class ESGFItemProperties(ItemProperties):
     retracted: Optional[str] = None
     source_id: str
     source_type: List[str]
-    start_datetime: datetimevalidate.datetime
     sub_experiment_id: str
     table_id: str
     title: str
@@ -55,4 +52,4 @@ class ESGFItemProperties(ItemProperties):
 
 
 class CMIP6Item(Item):
-    properties: CMIP6ItemProperties
+    properties: ESGFItemProperties

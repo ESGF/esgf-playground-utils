@@ -20,7 +20,7 @@ class _Payload(BaseModel):
 
     """
 
-    key: str
+    collection_id: str
 
 
 class CreatePayload(_Payload):
@@ -28,7 +28,6 @@ class CreatePayload(_Payload):
     Model describing a ``CREATE`` payload. This must be sent as a ``POST`` request.
     """
 
-    collection_id: str
     method: Literal["POST"]
     item: Item
 
