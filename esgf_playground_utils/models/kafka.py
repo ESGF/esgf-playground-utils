@@ -83,8 +83,7 @@ class Data(BaseModel):
     """
 
     type: Literal["STAC"]
-    payload: Union[CreatePayload, RevokePayload,
-                   UpdatePayload, PartialUpdatePayload]
+    payload: Union[CreatePayload, RevokePayload, UpdatePayload, PartialUpdatePayload]
 
 
 class RequesterData(BaseModel):

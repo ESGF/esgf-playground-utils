@@ -46,9 +46,7 @@ class ESGFItemProperties(ItemProperties):
     variant_label: str
     version: str
 
-    model_config = ConfigDict(
-        protected_namespaces=()
-    )
+    model_config = ConfigDict(protected_namespaces=())
 
 
 class CMIP6Item(Item):
