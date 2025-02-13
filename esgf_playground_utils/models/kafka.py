@@ -6,8 +6,9 @@ from datetime import datetime
 from enum import Enum
 from typing import Any, Dict, Literal, Optional, Union
 
-from .item import CMIP6Item as Item
 from pydantic import BaseModel
+
+from .item import CMIP6Item as Item
 
 
 class _Payload(BaseModel):

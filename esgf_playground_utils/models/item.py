@@ -2,11 +2,11 @@
 Models relating to STAC Items for the ESGF-Playground.
 """
 
-from pydantic import AnyUrl, ConfigDict, HttpUrl
-from stac_pydantic.item import Item, ItemProperties
+import datetime as datetimevalidate
 from typing import List, Optional
 
-import datetime as datetimevalidate
+from pydantic import AnyUrl, ConfigDict, HttpUrl
+from stac_pydantic.item import Item, ItemProperties
 
 
 class ESGFItem(Item):
