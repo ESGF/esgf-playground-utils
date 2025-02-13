@@ -14,7 +14,7 @@ class ESGFItem(Item):
 
 
 class ESGFItemProperties(ItemProperties):
-    access: List[str]
+    access: Optional[List[str]] = []
     activity_id: List[str]
     cf_standard_name: str
     citation_url: HttpUrl
@@ -27,24 +27,24 @@ class ESGFItemProperties(ItemProperties):
     grid_label: str
     institution_id: str
     mip_era: str
-    model_cohort: str
+    model_cohort: Optional[str] = None
     nominal_resolution: str
-    pid: str
-    product: str
-    project: str
-    realm: List[str]
-    retracted: Optional[str] = None
+    pid: Optional[str] = None
+    product: Optional[str] = None
+    project: Optional[str] = None
+    realm: Optional[List[str]] = []
+    retracted: Optional[bool] = False
     source_id: str
     source_type: List[str]
     sub_experiment_id: str
     table_id: str
     title: str
-    variable: str
+    variable: Optional[str] = None
     variable_id: str
     variable_long_name: str
-    variable_units: str
+    variable_units: Optional[str] = None
     variant_label: str
-    version: str
+    version: Optional[str] = None
 
     model_config = ConfigDict(protected_namespaces=())
 

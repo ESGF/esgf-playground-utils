@@ -6,7 +6,7 @@ from datetime import datetime
 from enum import Enum
 from typing import Any, Dict, Literal, Optional, Union
 
-from models.item import CMIP6Item as Item
+from .item import CMIP6Item as Item
 from pydantic import BaseModel
 
 
@@ -83,7 +83,8 @@ class Data(BaseModel):
     """
 
     type: Literal["STAC"]
-    payload: Union[CreatePayload, RevokePayload, UpdatePayload, PartialUpdatePayload]
+    payload: Union[CreatePayload, RevokePayload,
+                   UpdatePayload, PartialUpdatePayload]
 
 
 class RequesterData(BaseModel):

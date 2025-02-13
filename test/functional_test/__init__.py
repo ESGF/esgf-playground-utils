@@ -91,7 +91,7 @@ class TestKafkaEvent(unittest.TestCase):
           "variable_long_name": "Precipitation",
           "variable_units": "m s-1",
           "cf_standard_name": "air_temperature",
-          "activity_id": "CMIP",
+          "activity_id": ["CMIP"],
           "data_specs_version": "01.00.21",
           "experiment_title": "Simulation of recent past (1850 to 2014). Impose changing conditions (consistent with observations). Should be initialised from a point early enough in the pre-industrial control run to ensure that the end of all the perturbed runs branching from the end of this historical run end before the end of the control. Only one ensemble member is requested but modelling groups are strongly encouraged to submit at least three ensemble members of their CMIP historical simulation.",
           "frequency": "3hrPt",
@@ -101,7 +101,7 @@ class TestKafkaEvent(unittest.TestCase):
           "institution_id": "IPSL",
           "mip_era": "CMIP6",
           "source_id": "CMCC-ESM2",
-          "source_type": "AOGCM BGC AER CHEM",
+          "source_type": ["AOGCM BGC AER CHEM"],
           "experiment_id": "ssp585",
           "sub_experiment_id": "none",
           "nominal_resolution": "10 km",
@@ -153,12 +153,10 @@ class TestKafkaEvent(unittest.TestCase):
     "request_id": "dee8c54c-e815-4863-87fb-7b606efd2501",
     "auth": {
         "auth_policy_id": "ESGF-Publish-00012",
-        "client_id": "CEDA-transaction-client",
         "requester_data": {
+          "client_id": "b16b12b6-d274-11e5-8e41-5fea585a1aa2",
           "iss": "auth.globus.org",
-          "sub": "b16b12b6-d274-11e5-8e41-5fea585a1aa2",
-          "identity_provider": "0dcf5063-bffd-40f7-b403-24f97e32fa47",
-          "identity_provider_display_name": "University of Chicago"
+          "sub": "b16b12b6-d274-11e5-8e41-5fea585a1aa2"
         }
     },
     "publisher": {
@@ -249,7 +247,7 @@ class TestKafkaEvent(unittest.TestCase):
           "variable_long_name": "Precipitation",
           "variable_units": "m s-1",
           "cf_standard_name": "air_temperature",
-          "activity_id": "CMIP",
+          "activity_id": ["CMIP",]
           "data_specs_version": "01.00.21",
           "experiment_title": "Simulation of recent past (1850 to 2014). Impose changing conditions (consistent with observations). Should be initialised from a point early enough in the pre-industrial control run to ensure that the end of all the perturbed runs branching from the end of this historical run end before the end of the control. Only one ensemble member is requested but modelling groups are strongly encouraged to submit at least three ensemble members of their CMIP historical simulation.",
           "frequency": "3hrPt",
@@ -349,12 +347,10 @@ class TestKafkaEvent(unittest.TestCase):
             "request_id": "dee8c54c-e815-4863-87fb-7b606efd2501",
             "auth": {
                 "auth_policy_id": "ESGF-Publish-00012",
-                "client_id": "CEDA-transaction-client",
                 "requester_data": {
+                  "client_id": "b16b12b6-d274-11e5-8e41-5fea585a1aa2",
                   "iss": "auth.globus.org",
-                  "sub": "b16b12b6-d274-11e5-8e41-5fea585a1aa2",
-                  "identity_provider": "0dcf5063-bffd-40f7-b403-24f97e32fa47",
-                  "identity_provider_display_name": "University of Chicago"
+                  "sub": "b16b12b6-d274-11e5-8e41-5fea585a1aa2"
                 }
             },
             "publisher": {
@@ -380,7 +376,7 @@ class TestKafkaEvent(unittest.TestCase):
     "payload": {
       "collection_id": "cmip6",
       "method": "DELETE",
-      "item_id": "an_item" 
+      "item_id": "an_item"
     }
   },
   "metadata": {
@@ -388,12 +384,10 @@ class TestKafkaEvent(unittest.TestCase):
     "request_id": "dee8c54c-e815-4863-87fb-7b606efd2501",
     "auth": {
         "auth_policy_id": "ESGF-Publish-00012",
-        "client_id": "CEDA-transaction-client",
         "requester_data": {
+          "client_id": "b16b12b6-d274-11e5-8e41-5fea585a1aa2",
           "iss": "auth.globus.org",
-          "sub": "b16b12b6-d274-11e5-8e41-5fea585a1aa2",
-          "identity_provider": "0dcf5063-bffd-40f7-b403-24f97e32fa47",
-          "identity_provider_display_name": "University of Chicago"
+          "sub": "b16b12b6-d274-11e5-8e41-5fea585a1aa2"
         }
     },
     "publisher": {
@@ -485,7 +479,7 @@ class TestKafkaEvent(unittest.TestCase):
           "variable_long_name": "Precipitation",
           "variable_units": "m s-1",
           "cf_standard_name": "air_temperature",
-          "activity_id": "CMIP",
+          "activity_id": ["CMIP"],
           "data_specs_version": "01.00.21",
           "experiment_title": "Simulation of recent past (1850 to 2014). Impose changing conditions (consistent with observations). Should be initialised from a point early enough in the pre-industrial control run to ensure that the end of all the perturbed runs branching from the end of this historical run end before the end of the control. Only one ensemble member is requested but modelling groups are strongly encouraged to submit at least three ensemble members of their CMIP historical simulation.",
           "frequency": "3hrPt",
@@ -495,7 +489,7 @@ class TestKafkaEvent(unittest.TestCase):
           "institution_id": "IPSL",
           "mip_era": "CMIP6",
           "source_id": "CMCC-ESM2",
-          "source_type": "AOGCM BGC AER CHEM",
+          "source_type": ["AOGCM BGC AER CHEM"],
           "experiment_id": "ssp585",
           "sub_experiment_id": "none",
           "nominal_resolution": "10 km",
@@ -547,12 +541,10 @@ class TestKafkaEvent(unittest.TestCase):
     "request_id": "dee8c54c-e815-4863-87fb-7b606efd2501",
     "auth": {
         "auth_policy_id": "ESGF-Publish-00012",
-        "client_id": "CEDA-transaction-client",
         "requester_data": {
+          "client_id": "b16b12b6-d274-11e5-8e41-5fea585a1aa2",
           "iss": "auth.globus.org",
-          "sub": "b16b12b6-d274-11e5-8e41-5fea585a1aa2",
-          "identity_provider": "0dcf5063-bffd-40f7-b403-24f97e32fa47",
-          "identity_provider_display_name": "University of Chicago"
+          "sub": "b16b12b6-d274-11e5-8e41-5fea585a1aa2"
         }
     },
     "publisher": {
