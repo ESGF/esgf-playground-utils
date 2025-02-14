@@ -4,10 +4,11 @@ Models relating to Kakfa payloads for the ESGF-Playground.
 
 from datetime import datetime
 from enum import Enum
-from typing import Any, Dict, Literal, Union
+from typing import Any, Dict, Literal, Optional, Union
 
 from pydantic import BaseModel
-from stac_pydantic.item import Item
+
+from .item import CMIP6Item as Item
 
 
 class _Payload(BaseModel):
@@ -83,7 +84,6 @@ class Data(BaseModel):
     """
 
     type: Literal["STAC"]
-    version: Literal["1.0.0"]
     payload: Union[CreatePayload, RevokePayload, UpdatePayload, PartialUpdatePayload]
 
 
@@ -92,10 +92,9 @@ class RequesterData(BaseModel):
     Model describing ``Requests Data`` for the ``Auth`` component of a Kafka message in more detail.
     """
 
+    client_id: str
     iss: str
     sub: str
-    identity_provider: str
-    identity_provider_display_name: str
 
 
 class Auth(BaseModel):
@@ -108,8 +107,7 @@ class Auth(BaseModel):
       providing the message.
     """
 
-    auth_policy_id: str
-    client_id: str
+    auth_policy_id: Optional[str] = None
     requester_data: RequesterData
 
 
@@ -128,10 +126,10 @@ class Metadata(BaseModel):
     Multiple metadata attributes required for ESGF but not part of the STAC payload.
     """
 
-    event_id: str
-    request_id: str
     auth: Auth
+    event_id: str
     publisher: Publisher
+    request_id: str
     time: datetime
     schema_version: str
 
@@ -142,8 +140,8 @@ class KafkaEvent(BaseModel):
     mandated metadata.
     """
 
-    metadata: Metadata
     data: Data
+    metadata: Metadata
 
 
 class ErrorType(str, Enum):
