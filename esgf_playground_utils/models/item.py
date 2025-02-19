@@ -16,7 +16,7 @@ class ESGFItemProperties(ItemProperties):
     access: Optional[List[str]] = []
     activity_id: List[str]
     cf_standard_name: str
-    citation_url: HttpUrl
+    citation_url: Optional[HttpUrl] = None
     data_spec_version: Optional[str] = None
     experiment_id: str
     experiment_title: str
