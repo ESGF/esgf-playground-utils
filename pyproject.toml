@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "esgf-playground-utils"
-version = "1.0.0"
+version = "1.0.1"
 description = "Common library and models for the ESGF-Playground"
 readme = "README.rst"
 authors = [

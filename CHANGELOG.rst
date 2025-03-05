@@ -21,6 +21,22 @@ Removed
 Fixed
 ^^^^^
 
+`1.0.1 <https://github.com/ESGF/esgf-playground-utils/releases/tag/1.0.1>`_  - 2025-03-05
+-----------------------------------------------------------------------------------------
+
+Added
+^^^^^
+
+Changed
+^^^^^^^
+- Updated ESGFItemProperties citation_url made optional.
+
+Removed
+^^^^^^^
+
+Fixed
+^^^^^
+
 `1.0.0 <https://github.com/ESGF/esgf-playground-utils/releases/tag/1.0.0>`_  - 2025-02-14
 -----------------------------------------------------------------------------------------
 
