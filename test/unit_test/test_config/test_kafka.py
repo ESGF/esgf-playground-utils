@@ -16,6 +16,6 @@ class TestSettings(unittest.TestCase):
         settings = Settings()
 
         # This appears to be meaningless, but it is actually to prevent automatic code
-        # formatters from removing the line (the tsts doesn't strictly need to assert anything, it just needs
-        # not to raise an Exception
+        # formatters from removing the line (the test doesn't strictly need to assert anything, it just needs
+        # not to raise an Exception)
         self.assertIsInstance(settings, Settings)
