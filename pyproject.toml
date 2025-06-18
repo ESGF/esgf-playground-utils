@@ -11,9 +11,9 @@ authors = [
 
 [tool.poetry.dependencies]
 python = ">=3.9"
-pydantic-settings = "^2.3.4"
+pydantic-settings = "^2.6.1"
 stac-pydantic = "^3.1.1"
-jinja2 = "^3.1.5"
+jinja2 = "^3.1.6"
 
 [tool.poetry.group.black.dependencies]
 black = "^24.4.2"
@@ -24,11 +24,11 @@ mypy = "^1.10.1"
 pre-commit = "^3.7.1"
 
 [tool.poetry.group.bandit.dependencies]
-bandit = "^1.7.9"
+bandit = "^1.7.10"
 pre-commit = "^3.7.1"
 
 [tool.poetry.group.ruff.dependencies]
-ruff = "^0.5.2"
+ruff = "^0.7.3"
 pre-commit = "^3.7.1"
 
 [tool.poetry.group.isort.dependencies]
@@ -44,9 +44,9 @@ coverage = { extras = ["toml"], version = "^7.6.0" }
 
 [tool.poetry.group.docs.dependencies]
 sphinx = "^7.4.7"
-sphinx-autoapi = "^3.2.1"
+sphinx-autoapi = "^3.3.3"
 sphinx-pydantic = "^0.1.1"
-sphinx-rtd-theme = "^2.0.0"
+sphinx-rtd-theme = "^3.0.1"
 sphinx-mdinclude = "^0.6.2"
 
 [tool.mypy]
