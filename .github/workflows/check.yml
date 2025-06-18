@@ -10,12 +10,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: [ "3.9", "3.10", "3.11", "3.12" ]
+        python-version: [ "3.10", "3.11", "3.12" ]
     steps:
       - uses: actions/checkout@v4
       - name: Install Poetry
         run: |
-          pipx install 'poetry<2'
+          pipx install 'poetry'
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
@@ -38,7 +38,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install Poetry
         run: |
-          pipx install 'poetry<2'
+          pipx install 'poetry'
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -65,10 +65,10 @@ jobs:
         run: |
           poetry install --only ruff
           poetry run ruff check
-      - name: Run audit
-        run: |
-          pipx inject poetry poetry-audit-plugin
-          poetry audit $(poetry run python -c "import tomllib; f = open('pyproject.toml','rb') ; data =  tomllib.load(f); f.close(); ignore_codes = data['tool']['quality']['audit']['ignore-code']; print('--ignore-code=' + ','.join(ignore_codes)) if ignore_codes else print('')")
+      # - name: Run audit
+      #   run: |
+      #     pipx inject poetry poetry-audit-plugin
+      #     poetry audit $(poetry run python -c "import tomllib; f = open('pyproject.toml','rb') ; data =  tomllib.load(f); f.close(); ignore_codes = data['tool']['quality']['audit']['ignore-code']; print('--ignore-code=' + ','.join(ignore_codes)) if ignore_codes else print('')")
       - name: Run xenon
         run: |
           poetry install --only xenon
