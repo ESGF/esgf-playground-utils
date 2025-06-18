@@ -21,6 +21,22 @@ Removed
 Fixed
 ^^^^^
 
+`1.0.2 <https://github.com/ESGF/esgf-playground-utils/releases/tag/1.0.2>`_  - 2025-06-18
+-----------------------------------------------------------------------------------------
+
+Added
+^^^^^
+
+Changed
+^^^^^^^
+- Updated PatchPayload to use PatialItem and PatchOperation.
+
+Removed
+^^^^^^^
+
+Fixed
+^^^^^
+
 `1.0.1 <https://github.com/ESGF/esgf-playground-utils/releases/tag/1.0.1>`_  - 2025-03-05
 -----------------------------------------------------------------------------------------
 

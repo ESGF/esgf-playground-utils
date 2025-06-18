@@ -4,9 +4,10 @@ Models relating to Kakfa payloads for the ESGF-Playground.
 
 from datetime import datetime
 from enum import Enum
-from typing import Any, Dict, Literal, Optional, Union
+from typing import Literal, Optional, Union
 
 from pydantic import BaseModel
+from stac_fastapi.types.stac import PartialItem, PatchOperation
 
 from .item import CMIP6Item as Item
 
@@ -53,13 +54,13 @@ class RevokePayload(_Payload):
     item_id: str
 
 
-class PartialUpdatePayload(_Payload):
+class PatchPayload(_Payload):
     """
     Model describing a ``PARTIAL_UPDATE`` payload. This must be sent as a ``PATCH`` request.
     """
 
     method: Literal["PATCH"]
-    item: Dict[str, Any]
+    patch: PartialItem | list[PatchOperation]
     item_id: str
 
 
@@ -84,7 +85,7 @@ class Data(BaseModel):
     """
 
     type: Literal["STAC"]
-    payload: Union[CreatePayload, RevokePayload, UpdatePayload, PartialUpdatePayload]
+    payload: Union[CreatePayload, RevokePayload, UpdatePayload, PatchPayload]
 
 
 class RequesterData(BaseModel):
