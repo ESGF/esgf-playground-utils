@@ -1,6 +1,6 @@
 [project]
 name = "esgf-playground-utils"
-version = "1.0.2"
+version = "1.0.3"
 description = "Common library and models for the ESGF-Playground"
 readme = "README.rst"
 authors = [
