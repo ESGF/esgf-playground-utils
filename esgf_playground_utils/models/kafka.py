@@ -7,7 +7,7 @@ from enum import Enum
 from typing import Literal, Optional, Union
 
 from pydantic import BaseModel
-from stac_fastapi.types.stac import PartialItem, PatchOperation
+from stac_fastapi.extensions.core.transaction.request import PartialItem, PatchOperation
 
 from .item import CMIP6Item as Item
 
