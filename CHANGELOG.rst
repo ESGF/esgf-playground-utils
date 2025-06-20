@@ -21,7 +21,7 @@ Removed
 Fixed
 ^^^^^
 
-`1.0.2 <https://github.com/ESGF/esgf-playground-utils/releases/tag/1.0.3>`_  - 2025-06-20
+`1.0.3 <https://github.com/ESGF/esgf-playground-utils/releases/tag/1.0.3>`_  - 2025-06-20
 -----------------------------------------------------------------------------------------
 
 Added
