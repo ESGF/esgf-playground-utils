@@ -1655,65 +1655,57 @@ standalone = ["Sphinx (>=5)"]
 test = ["pytest"]
 
 [[package]]
-name = "stac-fastapi.api"
-version = "5.2.1"
+name = "stac-fastapi-api"
+version = "6.0.0"
 description = "An implementation of STAC API based on the FastAPI framework."
 optional = false
 python-versions = ">=3.9"
 groups = ["main"]
-files = []
-develop = false
+files = [
+    {file = "stac_fastapi_api-6.0.0-py3-none-any.whl", hash = "sha256:8cb99869d886d806a098d0d0caf46a75bd39ff64a8dfdf491bded065ed4d53b6"},
+    {file = "stac_fastapi_api-6.0.0.tar.gz", hash = "sha256:ab6241df62847c3b012f5bb6dfca5c7cd6a3c097afd8e5881b0e213a3d6dcdb2"},
+]
 
 [package.dependencies]
 brotli_asgi = "*"
-"stac-fastapi.types" = ">=5.2,<6.0"
+"stac-fastapi.types" = ">=6.0,<7.0"
 
 [package.extras]
 benchmark = ["pytest-benchmark"]
 dev = ["httpx", "pre-commit", "pytest", "pytest-asyncio", "pytest-cov", "requests"]
 docs = ["black (>=23.10.1)", "griffe-inherited-docstrings (>=1.0.0)", "mkdocs (>=1.4.3)", "mkdocs-jupyter (>=0.24.5)", "mkdocs-material[imaging] (>=9.5)", "mkdocstrings[python] (>=0.25.1)"]
 
-[package.source]
-type = "git"
-url = "https://github.com/stac-utils/stac-fastapi.git"
-reference = "refs/pull/744/head"
-resolved_reference = "6f3a213435db4876ab8660d38638c7737b3d6ee0"
-subdirectory = "stac_fastapi/api"
-
 [[package]]
-name = "stac-fastapi.extensions"
-version = "5.2.1"
+name = "stac-fastapi-extensions"
+version = "6.0.0"
 description = "An implementation of STAC API based on the FastAPI framework."
 optional = false
 python-versions = ">=3.9"
 groups = ["main"]
-files = []
-develop = false
+files = [
+    {file = "stac_fastapi_extensions-6.0.0-py3-none-any.whl", hash = "sha256:c158a63c5ca7e83d95817956385c58606ab92b0c733ab3a62a42e3d65b108274"},
+    {file = "stac_fastapi_extensions-6.0.0.tar.gz", hash = "sha256:3829982d07299bb82605774d311675795fbc6972c920b6aa48ef6853cc187f7b"},
+]
 
 [package.dependencies]
-"stac-fastapi.api" = ">=5.2,<6.0"
-"stac-fastapi.types" = ">=5.2,<6.0"
+"stac-fastapi.api" = ">=6.0,<7.0"
+"stac-fastapi.types" = ">=6.0,<7.0"
 
 [package.extras]
 dev = ["pre-commit", "pytest", "pytest-asyncio", "pytest-cov", "requests"]
 docs = ["black (>=23.10.1)", "griffe-inherited-docstrings (>=1.0.0)", "mkdocs (>=1.4.3)", "mkdocs-jupyter (>=0.24.5)", "mkdocs-material[imaging] (>=9.5)", "mkdocstrings[python] (>=0.25.1)"]
 
-[package.source]
-type = "git"
-url = "https://github.com/stac-utils/stac-fastapi.git"
-reference = "refs/pull/744/head"
-resolved_reference = "6f3a213435db4876ab8660d38638c7737b3d6ee0"
-subdirectory = "stac_fastapi/extensions"
-
 [[package]]
-name = "stac-fastapi.types"
-version = "5.2.1"
+name = "stac-fastapi-types"
+version = "6.0.0"
 description = "An implementation of STAC API based on the FastAPI framework."
 optional = false
 python-versions = ">=3.9"
 groups = ["main"]
-files = []
-develop = false
+files = [
+    {file = "stac_fastapi_types-6.0.0-py3-none-any.whl", hash = "sha256:127db34c036223359c6a4a4a7d0a16d5f41d9b841a5dd109978b9dc1c0cfbf61"},
+    {file = "stac_fastapi_types-6.0.0.tar.gz", hash = "sha256:ce058af7813e009b4ec1f7ccd1187c5d661b9505099b7b208c814c278ecd68a7"},
+]
 
 [package.dependencies]
 attrs = ">=23.2.0"
@@ -1725,13 +1717,6 @@ stac_pydantic = ">=3.3.0,<4.0"
 [package.extras]
 dev = ["pre-commit", "pytest", "pytest-asyncio", "pytest-cov", "requests"]
 docs = ["black (>=23.10.1)", "griffe-inherited-docstrings (>=1.0.0)", "mkdocs (>=1.4.3)", "mkdocs-jupyter (>=0.24.5)", "mkdocs-material[imaging] (>=9.5)", "mkdocstrings[python] (>=0.25.1)"]
-
-[package.source]
-type = "git"
-url = "https://github.com/stac-utils/stac-fastapi.git"
-reference = "refs/pull/744/head"
-resolved_reference = "6f3a213435db4876ab8660d38638c7737b3d6ee0"
-subdirectory = "stac_fastapi/types"
 
 [[package]]
 name = "stac-pydantic"
@@ -1918,4 +1903,4 @@ requests = ">=2.0,<3.0"
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.10,<4.0"
-content-hash = "5d908546112b213680b631b028bda6aa27e23bc7c2c4b41525e23fecddb959f6"
+content-hash = "cdb4446db9c1106ee8b8d4b0bd0127ef160edb5837f8fd798eb5ab2fdbbba106"
